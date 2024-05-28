@@ -6,8 +6,8 @@ const sessionMiddleware = session({
     name: "mathGame",
     saveUninitialized: true,
     cookie: {
-        secure: false,
-        httpOnly: true,
+        secure: true,
+        httpOnly: false,
         domain: process.env.DOMAIN || "math-thai.onrender.com", //"localhost"
         path: "/",
         maxAge: 3600000,

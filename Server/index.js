@@ -10,7 +10,7 @@ const mysqlConnection = require('./mySQL.js');
 const { v4: uuidv4 } = require('uuid');
 const { spawn } = require('child_process');
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://math-thai-project.onrender.com"],
+    origin: ["http://localhost:3000", "https://math-thai-project.onrender.com", "https://math-thai.onrender.com"],
     credentials: true,
     methods: ['GET', 'POST', 'DELETE'],
     exposedHeaders: ['set-cookie', 'ajax-redirect'],
@@ -20,7 +20,7 @@ const corsOptions = {
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 3450;
-const SERVER_URL = process.env.SERVER || "https://math-thai.dam.inspedralbes.cat" //"http://localhost" ;
+const SERVER_URL = process.env.SERVER || "https://math-thai-project.onrender.com" //"http://localhost" ;
 
 const { getDocument, getCategorias, getPreguntas, getPregunta, insertInCollection, findRegisteredResult, findRegisteredResults, findRegisteredHistory, updateCollection, findRegisteredBattles, getActivities, getPreguntaRandom } = require("./mongoDB.js");
 const { requireLogin, shuffleArray, checkQuestion, generarPassword, obtenerFechaYHoraActual } = require("./utils.js");

@@ -9,9 +9,8 @@ const cookieParser = require('cookie-parser');
 const mysqlConnection = require('./mySQL.js');
 const { v4: uuidv4 } = require('uuid');
 const { spawn } = require('child_process');
-const https = require('https');
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://math-thai.dam.inspedralbes.cat"],
+    origin: ["http://localhost:3000", "https://math-thai-project.onrender.com"],
     credentials: true,
     methods: ['GET', 'POST', 'DELETE'],
     exposedHeaders: ['set-cookie', 'ajax-redirect'],
@@ -19,7 +18,7 @@ const corsOptions = {
     optionsSuccessStatus: 200,
 };
 const app = express();
-const server = https.createServer({cert: fs.readFileSync('cert.crt'),key: fs.readFileSync('key.key')},app);
+const server = http.createServer(app);
 const port = process.env.PORT || 3450;
 const SERVER_URL = process.env.SERVER || "https://math-thai.dam.inspedralbes.cat" //"http://localhost" ;
 

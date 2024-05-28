@@ -6,12 +6,12 @@ const sessionMiddleware = session({
     name: "mathGame",
     saveUninitialized: true,
     cookie: {
-        secure: true,
+        secure: false,
         httpOnly: false,
         domain: process.env.DOMAIN || "math-thai.onrender.com", //"localhost"
         path: "/",
         maxAge: 3600000,
-        sameSite: 'lax'
+        sameSite: 'none'
     }
 });
 module.exports = sessionMiddleware;

@@ -8,7 +8,7 @@ const sessionMiddleware = session({
     cookie: {
         secure: false,
         httpOnly: true,
-        domain: process.env.DOMAIN || "math-thai.dam.inspedralbes.cat", //"localhost"
+        domain: process.env.DOMAIN || "math-thai.onrender.com", //"localhost"
         path: "/",
         maxAge: 3600000,
         sameSite: 'lax'
